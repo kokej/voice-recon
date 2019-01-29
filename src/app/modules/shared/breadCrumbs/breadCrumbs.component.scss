@@ -1,0 +1,10 @@
+
+.breadcrumb li {
+  display: inline;
+  a {
+      text-decoration: none;
+  }
+}
+.breadcrumb li+li:before {
+  content: " > ";
+}
