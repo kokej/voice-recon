@@ -19,6 +19,9 @@ export class VCService {
         return Observable.create(observer => {
             const { webkitSpeechRecognition }: IWindow = <IWindow>window;
             this.speechRecognition = new webkitSpeechRecognition();
+            if (!this.speechRecognition) {
+              return observer.next('api no soportada');
+            }
             this.speechRecognition.continuous = true;
             // this.speechRecognition.interimResults = true;
             this.speechRecognition.lang = 'es-ES';
