@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+.card-body.result-list  {
+    position: relative;
+    height: 15em;
+    overflow-y: auto;
+    padding: 0;
+}
+.spinner-grow {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+}

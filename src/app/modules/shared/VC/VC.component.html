@@ -1,3 +1,49 @@
-<p>
-  VC works!
-</p>
+<div class="card">
+  <div class="card-header">
+    Speech Recognition API
+    <div
+      class="spinner-grow text-danger"
+      role="status"
+      *ngIf="!showSearchButton"
+    >
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div class="card-body result-list">
+    <h5 class="card-title p-3" *ngIf="speechData.length < 1; else resultList">
+      Your speech will be displayed here
+    </h5>
+    <ng-template #resultList>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let item of speechData">
+          {{ item }}
+        </li>
+      </ul>
+    </ng-template>
+  </div>
+  <div class="card-footer text-muted">
+    <p class="lead">Use buttons bellow to start/stop listening</p>
+    <a
+      class="btn btn-primary mr-2"
+      (click)="activateSpeechSearchMovie()"
+      [class.disabled]="!showSearchButton"
+      href="javascript:void(0)"
+      role="button"
+      >start</a
+    >
+    <a
+      class="btn btn-primary"
+      (click)="stopSpeechSearchMovie()"
+      [class.disabled]="showSearchButton"
+      href="javascript:void(0)"
+      role="button"
+      >stop</a
+    >
+  </div>
+</div>
+<blockquote class="blockquote mb-0 text-right bottom-fixed mt-3">
+  <p>Best voice recognition app ever!</p>
+  <footer class="blockquote-footer">
+    My mum, at a <cite title="Source Title">informal family dinner</cite>
+  </footer>
+</blockquote>
